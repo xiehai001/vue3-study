@@ -1,13 +1,14 @@
 <script setup>
-import List from './components/List.vue'
 import { reactive, ref } from 'vue'
-let num = ref(100)
+import Child1 from './components/Child1.vue';
+import Child2 from './components/Child2.vue';
 
 </script>
 
 <template>
   <div>
-    <List v-model:num="num"></List>
+    <Child1></Child1>
+    <Child2></Child2>
   </div>
 </template>
 

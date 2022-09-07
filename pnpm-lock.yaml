@@ -2,10 +2,12 @@ lockfileVersion: 5.3
 
 specifiers:
   '@vitejs/plugin-vue': ^3.1.0
+  mitt: ^3.0.0
   vite: ^3.1.0
   vue: ^3.2.37
 
 dependencies:
+  mitt: 3.0.0
   vue: 3.2.38
 
 devDependencies:
@@ -369,6 +371,10 @@ packages:
     resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==}
     dependencies:
       sourcemap-codec: 1.4.8
+    dev: false
+
+  /mitt/3.0.0:
+    resolution: {integrity: sha512-7dX2/10ITVyqh4aOSVI9gdape+t9l2/8QxHrFmUXu4EEUpdlxl6RudZUPZoc+zuY2hk1j7XxVroIVIan/pD/SQ==}
     dev: false
 
   /nanoid/3.3.4:
