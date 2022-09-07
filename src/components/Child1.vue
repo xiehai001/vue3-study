@@ -1,8 +1,6 @@
 <template>
-    <div>
-        <teleport to="#container">
-            这是传送内容
-        </teleport>
+    <div style="height:50vh;background:red;width:100vw">
+        child1
     </div>
 </template>
 

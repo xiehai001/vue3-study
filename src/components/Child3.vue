@@ -1,6 +1,6 @@
 <template>
-    <div style="height:50vh;background:green">
-        Child2
+    <div>
+        <img src="../assets/vue.svg" alt="" style="width:100vw;height:300px;">
     </div>
 </template>
 
