@@ -1,12 +1,16 @@
 <script setup>
-import { reactive, ref } from 'vue'
 import List from './components/List.vue'
-let msg = ref('父组件的数据')
+import { reactive, ref } from 'vue'
+let childMsg = ref('');
+const childFn = (data) => {
+childMsg.value = data
+}
 </script>
 
 <template>
   <div>
-    <List :msg="msg"></List>
+    来自子组件的数据=》 {{childMsg}}
+    <List @childFn="childFn"></List>
   </div>
 </template>
 
