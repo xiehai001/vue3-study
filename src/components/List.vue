@@ -1,17 +1,23 @@
 <template>
     <div>
-        <button @click="send">发送数据</button>
+        {{num}}
+        <button @click="send">改变数据</button>
     </div>
 </template>
 
 <script setup>
-import { ref, defineEmits } from "vue";
-const emit = defineEmits(['childFn'])
-const childMsg = ref('子组件数据')
-const send = () => {
-emit('childFn', childMsg)
-}
+import { ref } from "vue";
 
+const emit = defineEmits(['update:num'])
+const props = defineProps({
+num: {
+type: Number,
+default: 100
+}
+})
+const send = () => {
+emit('update:num', 500)
+}
 </script>
 
 <style lang="scss" scoped>

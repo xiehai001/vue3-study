@@ -1,16 +1,13 @@
 <script setup>
 import List from './components/List.vue'
 import { reactive, ref } from 'vue'
-let childMsg = ref('');
-const childFn = (data) => {
-childMsg.value = data
-}
+let num = ref(100)
+
 </script>
 
 <template>
   <div>
-    来自子组件的数据=》 {{childMsg}}
-    <List @childFn="childFn"></List>
+    <List v-model:num="num"></List>
   </div>
 </template>
 
