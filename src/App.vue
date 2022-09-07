@@ -1,30 +1,12 @@
 <script setup>
-import { reactive } from 'vue'
-// 无法响应
-// const obj = {
-// a: 1,
-// b: 2
-// }
-// const add = () => {
-// obj['c'] = 1
-// }
-
-// 响应式
-
-const obj = reactive({
-a: 1,
-b: 2
-})
-const add = () => {
-obj['c'] = 1
-}
-
+import { reactive, ref } from 'vue'
+import List from './components/List.vue'
+let msg = ref('父组件的数据')
 </script>
 
 <template>
   <div>
-    {{obj}}
-    <button @click="add">添加</button>
+    <List :msg="msg"></List>
   </div>
 </template>
 
