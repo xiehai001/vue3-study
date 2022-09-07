@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+
+  <script>
+    let m = {
+      a: 1,
+      b: 2,
+      arr: [1, 2, 3],
+    };
+    let reactiveObj = {};
+    Object.keys(m).forEach((key) => {
+      Object.defineProperty(reactiveObj, key, {
+        get() {
+          console.log("获取设置对象属性");
+          return m[key];
+        },
+        set() {
+          console.log("设置对象属性");
+        },
+      });
+    });
+    console.log((reactiveObj.c = "ccc")); // 设置的费响应式的
+    console.log((reactiveObj.b = "111")); // 设置的响应式的监听
+  </script>
+</html>
