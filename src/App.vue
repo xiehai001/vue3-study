@@ -1,17 +1,29 @@
 <script setup>
-import { reactive, ref } from 'vue'
-import Child1 from './components/Child1.vue';
-import Child2 from './components/Child2.vue';
-let slotName = ref('footer')
+import { reactive, ref, shallowRef } from 'vue'
+import Tab1 from './components/Tab1.vue'
+import Tab3 from './components/Tab3.vue'
+import Tab2 from './components/Tab2.vue'
+const componetName = ref(Tab1)
+const tablist = reactive([
+{ name: 'tab1', component: shallowRef(Tab1) },
+{ name: 'tab2', component: shallowRef(Tab2) },
+{ name: 'tab3', component: shallowRef(Tab3) },
+]);
+const changeTab = (item) => {
+componetName.value = item.component
+}
+
+
 </script>
 
 <template>
   <div>
-    <Child1>
-    </Child1>
-    <div class="main"></div>
-    <div id="container"></div>
-    <!-- <Child2></Child2> -->
+    <ul>
+      <li v-for="(item,index) in tablist" :key="index" @click="changeTab(item)">{{item.name}}</li>
+    </ul>
+    <keep-alive>
+      <component :is="componetName"></component>
+    </keep-alive>
   </div>
 </template>
 
