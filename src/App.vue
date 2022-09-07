@@ -8,16 +8,9 @@ let slotName = ref('footer')
 <template>
   <div>
     <Child1>
-      <template v-slot:header>
-        我是父组件写在插槽的的内容
-      </template>
-      <template v-slot="{data}">
-        {{data}}
-      </template>
-      <template #[slotName]>
-        动态插槽
-      </template>
     </Child1>
+    <div class="main"></div>
+    <div id="container"></div>
     <!-- <Child2></Child2> -->
   </div>
 </template>
